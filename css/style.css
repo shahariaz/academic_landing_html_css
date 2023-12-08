@@ -17,7 +17,15 @@ a {
 html {
   font-size: 62.5%;
 }
-
+p,
+li,
+a {
+  font-family: "Urbanist", sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  color: var(--para-color);
+}
 h1,
 h2,
 h3,
@@ -27,6 +35,20 @@ h6 {
   font-family: "Poppins", sans-serif;
 }
 /* theme */
+:root {
+  --main-color: #0062ff;
+  --supporting-color: #ebf3fe;
+  --font-color: #424242;
+  /* --bg-color: #ffffff; */
+  --bg-color: #f7fcff;
+  --heading-color: #000a19;
+  --hero-heading-color: #003b99;
+  --white-color: #ffffff;
+  --para-color: #504e4d;
+  --bnt-hover-bg-color: #003b99;
+  --btn-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --footer-bg-color: #040d12;
+}
 /* layout */
 .container {
   max-width: 142rem;
@@ -37,6 +59,12 @@ h6 {
 /* module/reusable */
 
 /* states */
+
+.btn:hover {
+  background-color: var(--bnt-hover-bg-color);
+  cursor: pointer;
+  box-shadow: var(--btn-box-shadow);
+}
 /*navbar Serction Start */
 .section__navbar {
   width: 100%;
@@ -56,6 +84,32 @@ h6 {
   align-items: center;
   gap: 3.4rem;
   text-transform: capitalize;
+
+  & li a {
+    color: var(--heading-color);
+    font-weight: 600;
+    display: inline-block;
+    font-size: 1.6rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -0.3rem;
+      left: 0;
+      width: 0;
+      border-bottom: 0.2rem solid var(--main-color);
+      transition: all 0.3s linear;
+      -webkit-transition: all 0.3s linear;
+      -moz-transition: all 0.3s linear;
+      -ms-transition: all 0.3s linear;
+      -o-transition: all 0.3s linear;
+    }
+  }
+
+  & li a:hover::after {
+    width: 100%;
+  }
 }
 
 /*navbar Serction End */
