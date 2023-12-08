@@ -25,6 +25,7 @@ a {
   letter-spacing: 0.1rem;
   font-weight: 400;
   color: var(--para-color);
+  line-height: 1.5;
 }
 h1,
 h2,
@@ -55,9 +56,25 @@ h6 {
   margin: 0 auto;
   padding: 9.6rem 2.4rem;
 }
+.grid {
+  display: grid;
+}
+.grid__two--cols {
+  grid-template-columns: repeat(2, 1fr);
+}
 
 /* module/reusable */
-
+.btn {
+  padding: 1.2rem 3.2rem;
+  background-color: var(--main-color);
+  display: inline-block;
+  color: var(--white-color);
+  border-radius: 0.6rem;
+  -webkit-border-radius: 0.6rem;
+  -moz-border-radius: 0.6rem;
+  -ms-border-radius: 0.6rem;
+  -o-border-radius: 0.6rem;
+}
 /* states */
 
 .btn:hover {
@@ -113,3 +130,71 @@ h6 {
 }
 
 /*navbar Serction End */
+/*Hero Serction Start */
+main {
+  position: relative;
+  background-image: linear-gradient(
+    to top right,
+    #3d86fa,
+    #4484fb,
+    #679eff,
+    #b3d2ff,
+    #ebf3fe
+  );
+}
+.section__hero .grid {
+  align-items: center;
+  gap: 6.4rem;
+  & .hero__subheading {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: 1.7rem;
+    word-spacing: 0.2rem;
+    font-weight: 700;
+    color: var(--hero-heading-color);
+  }
+  & .hero__heading {
+    font-size: 5.8rem;
+    font-family: "Jost";
+    color: var(--hero-heading-color);
+    font-weight: 900;
+    line-height: 1.5;
+  }
+  & .hero__para {
+    color: var(--white-color);
+    margin: 2rem 0 4rem 0;
+  }
+}
+
+.section__hero--img img {
+  width: 100%;
+  height: auto;
+  transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+}
+
+/* shape divider */
+.custom-shape-divider-bottom-1702057429 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1702057429 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 150px;
+}
+
+.custom-shape-divider-bottom-1702057429 .shape-fill {
+  fill: #ffffff;
+}
+/*Hero Serction End */
